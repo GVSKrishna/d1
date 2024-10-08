@@ -1,6 +1,4 @@
-FROM openjdk:11
-MAINTAINER "Ashok Bollepalli <797979>"
-COPY target/spring-boot-docker-app.jar  /usr/app/
-WORKDIR /usr/app/
+FROM tomcat:8.0.20-jre8
+MAINTAINER Ashok <ashok@oracle.com>
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "spring-boot-docker-app.jar"]
+COPY target/maven-web-app.war /usr/local/tomcat/webapps/maven-web-app.war
